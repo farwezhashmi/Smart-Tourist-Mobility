@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Trebuchet MS", sans-serif;
+  color: #17221f;
+  background: #f4f0e6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+@layer components {
+  .field { @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-moss focus:ring-2 focus:ring-moss/15; }
+  .panel { @apply rounded-[2rem] border border-ink/10 bg-white/80 p-6 shadow-[0_24px_70px_rgba(23,34,31,0.11)] backdrop-blur sm:p-8; }
+  .primary-button { @apply flex w-full items-center justify-between rounded-xl bg-ink px-5 py-4 text-sm font-bold text-paper transition hover:bg-moss disabled:cursor-wait disabled:opacity-60; }
+  .preference-button { @apply rounded-xl border border-ink/10 bg-white px-3 py-3 text-left text-sm transition hover:border-moss/50; }
+  .preference-button-active { @apply border-moss bg-moss text-paper shadow-lg shadow-moss/15; }
+  .metric { @apply rounded-2xl border border-ink/10 bg-white/50 p-4; }
+  .metric span { @apply block font-display text-2xl text-moss; }
+  .metric strong { @apply mt-1 block text-xs uppercase tracking-[0.08em] text-ink/55; }
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.2em] text-moss; }
+  .route-card { @apply rounded-2xl border border-ink/10 bg-white p-5 transition hover:-translate-y-1 hover:shadow-xl; }
+  .route-card-recommended { @apply border-moss/50 shadow-[0_16px_40px_rgba(72,106,90,0.13)]; }
+  .mode-icon { @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-saffron/20 font-display text-xl text-ink; }
+  .recommendation-label { @apply rounded-full bg-moss px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-paper; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-rise { animation: rise 700ms ease-out both; }
+.animate-rise-delayed { animation: rise 700ms 140ms ease-out both; }
